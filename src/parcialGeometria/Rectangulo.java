@@ -6,5 +6,10 @@ public class Rectangulo extends Figura {
 		super(base * altura );
 		
 	}
-
+	
+	/*Sobreescritura del metodo toString*/
+	@Override
+	public String toString() {
+		return "Rectangulo" + super.toString();
+	}
 }
