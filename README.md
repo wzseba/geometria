@@ -1,5 +1,5 @@
-##Programación con Objetos - App Geometría
-###Enunciado
+## Programación con Objetos - App Geometría
+### Enunciado
 A.- Implementar un módulo para una aplicación de geometría plana. Nos piden que modelemos la clase Figura y además, como especializaciones de Figura, las clases Elipse, Círculo, Triángulo, Rectángulo y Cuadrado.
 
 Cabe la aclaración que cada figura tiene sus características puntuales, a saber:
