@@ -2,6 +2,8 @@ package parcialGeometria;
 
 import static java.lang.Math.*;
 
+import java.util.Objects;
+
 public class Punto implements Desplazable{
 	
 	private double x;
@@ -56,9 +58,27 @@ public class Punto implements Desplazable{
 		this.y += enY;
 	}
 
-	
-	
+	@Override
+	public String toString() {
+		return "Punto X= " + x + ", Y= " + y ;
+	}
 
-	
+	@Override
+	public int hashCode() {
+		return Objects.hash(x, y);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Punto other = (Punto) obj;
+		return Double.doubleToLongBits(x) == Double.doubleToLongBits(other.x)
+				&& Double.doubleToLongBits(y) == Double.doubleToLongBits(other.y);
+	}
 
 }
