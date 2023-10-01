@@ -1,33 +1,33 @@
 package parcialGeometria;
 
-public abstract class Figura implements Comparable<Figura>{
+public abstract class Figura implements Desplazable, Comparable<Figura>{
 	
-	private double area;
+	private Punto punto;
 	
-	public Figura(double area) {
-		this.area = area;
+	public Figura(double x, double y) {
+		this.punto = new Punto(x,y);
+	}
+	/*Constructores por defecto*/
+	public Figura(Punto p) {
+		this.punto = p;
 	}
 	
-	/* Final: No se puede sobrescribir un método final en ninguna clase derivada*/
-	public final double getArea() {
-		return this.area;
+	public Figura() {
+		this(0,0);
 	}
 	
-	public double getTotalAreas() {
-		double total = 0;
-		return total += getArea();
+	public Punto getPunto() {
+		return this.punto;
 	}
+	
+	/* Implementar para todas las figuras el metodo getArea */
+	public abstract double getArea();
+	
 		
 	/*Interfaz comparable, determinar si una figura es mayor o menor que otra segun su area*/
 	@Override
 	public int compareTo(Figura f) {
 		return Double.compare(this.getArea(), f.getArea());
-	}
-
-	/*Sobreescritura del metodo toString*/
-	@Override
-	public String toString() {
-		return " area: " + area;
 	}
 	
 }
